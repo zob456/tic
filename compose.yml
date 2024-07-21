@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  tic:
+    container_name: tic
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
