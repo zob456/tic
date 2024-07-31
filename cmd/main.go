@@ -1,7 +1,14 @@
 package main
 
-import "log"
+import (
+	"github.com/zob456/tic/internal/config"
+	"github.com/zob456/tic/internal/utils"
+)
+
+func init() {
+	config.LoadConfig()
+}
 
 func main() {
-	log.Print("hello")
+	utils.InfoLogger("TIC started")
 }

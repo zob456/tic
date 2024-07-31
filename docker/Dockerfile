@@ -13,7 +13,7 @@ ADD go.mod go.sum ./
 RUN go mod download
 
 COPY cmd ./cmd
-COPY internal ./internall
+COPY internal ./internal
 
 RUN go build -C cmd
 
