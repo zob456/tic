@@ -5,8 +5,7 @@
 # custome
 .idea
 .env
-**/**/*.gz
-2024-07-01_anthem_index.json
+.DS_Store
 
 # Binaries for programs and plugins
 *.exe
