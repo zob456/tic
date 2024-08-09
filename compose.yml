@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  tic:
+    container_name: tic
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    env_file:
+      - .env
