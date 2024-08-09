@@ -9,7 +9,7 @@ import (
 )
 
 type Environment struct {
-	CompressedFileLocation string `env:"COMPRESSED_FILE_LOCATION,required"`
+	FileUrl string `env:"FILE_URL,required"`
 }
 
 var ENV Environment

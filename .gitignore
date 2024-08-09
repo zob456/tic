@@ -6,6 +6,7 @@
 .idea
 .env
 **/**/*.gz
+2024-07-01_anthem_index.json
 
 # Binaries for programs and plugins
 *.exe
