@@ -14,7 +14,14 @@ func init() {
 
 func main() {
 	urlListBuilder := gzip_handler.New(5, 1922320936)
-	urlList, failedToParseUrls, err := urlListBuilder.FilterGzip()
+
+	resp, err := urlListBuilder.FetchGzip()
+	if err != nil {
+		panic(fmt.Errorf("failed to fetch file: %v", err))
+	}
+	defer resp.Body.Close()
+
+	urlList, failedToParseUrls, err := urlListBuilder.FilterGzip(resp)
 	if err != nil {
 		panic(err)
 	}

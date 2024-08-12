@@ -7,5 +7,5 @@ start:
 down:
 	docker compose down
 
-v-down:
+teardown:
 	docker compose down --volumes
