@@ -2,11 +2,11 @@
 
 set -e
 
-printf "Welcome to the Transparency in Coverage app!! I'm GIR & I will check your software to make sure you have the dependencies you need to run this application!"
+printf "Welcome to the Transparency in Coverage app!! Checking your software to make sure you have the dependencies you need to run this application...\n"
 sleep 1;
 
 if [[ $(which docker) ]]; then
-  echo "Docker installed installed"
+  echo "Docker is present..."
 else
   echo "Docker desktop NOT FOUND. It is required to run this project. You can download it at https://www.docker.com/products/docker-desktop/"
   exit 1;
