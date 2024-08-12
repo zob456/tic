@@ -2,6 +2,7 @@ package config
 
 import (
 	"log"
+	"time"
 
 	"github.com/caarlos0/env/v11"
 	"go.uber.org/zap"
@@ -9,7 +10,9 @@ import (
 )
 
 type Environment struct {
-	FileUrl string `env:"FILE_URL,required"`
+	BaseFileUrl   string `env:"BASE_FILE_URL,required"`
+	FileUrlSuffix string `env:"FILE_URL_SUFFIX,required"`
+	FileUrl       string
 }
 
 var ENV Environment
@@ -20,6 +23,11 @@ func LoadConfig() {
 	if err != nil {
 		log.Panicf("%+v\n", err)
 	}
+
+	// construct file URL based on current month
+	// This is because the file URL returned an error on the GET request with the July month after the month change.
+	// This way, the request is always made with the current month
+	ENV.FileUrl = ENV.BaseFileUrl + time.Now().Format("2006-01") + ENV.FileUrlSuffix
 
 	initLogger()
 }

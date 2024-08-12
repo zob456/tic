@@ -15,6 +15,8 @@ RUN go mod download
 COPY cmd ./cmd
 COPY internal ./internal
 
+RUN echo ls -a
+
 RUN go build -C cmd
 
 CMD [ "./cmd/cmd" ]
